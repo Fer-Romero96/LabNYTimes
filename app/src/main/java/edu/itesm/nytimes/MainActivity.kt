@@ -45,11 +45,12 @@ class MainActivity : AppCompatActivity() {
                 if (responseFromService.isSuccessful) {
                     Log.i("Books", results.results?.books.toString())
 
+
                     recyclerView = findViewById<RecyclerView>(R.id.recycler_view).apply {
 
-                        /*
-                        * Completa el código y crea el adapter.
-                        * */
+                        layoutManager = manager
+                        myAdapter = BooksAdapter(results.results?.books)
+                        adapter = myAdapter
 
 
                     }
@@ -59,5 +60,48 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+
+
+    override fun onStart() {
+        super.onStart()
+
+        val toast = Toast.makeText(applicationContext, "Esta en onStart", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val toast = Toast.makeText(applicationContext, "Esta en onResume", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        val toast = Toast.makeText(applicationContext, "Esta en onPause", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        val toast = Toast.makeText(applicationContext, "Esta en onStop", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        val toast = Toast.makeText(applicationContext, "Esta en onDestroy", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        val toast = Toast.makeText(applicationContext, "Esta en onRestart", Toast.LENGTH_SHORT)
+        toast.show()
     }
 }

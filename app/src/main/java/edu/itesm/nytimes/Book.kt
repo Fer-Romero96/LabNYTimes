@@ -1,18 +1,17 @@
 package edu.itesm.nytimes
 
-
-/*
 data class Results(
- //Completa aquí
+    var results: Books,
 )
 
 data class Books(
- //Completa aquí
+    var books: MutableList<Book>
 )
 
- */
-data class Book(val rank: Int,
-                val title: String,
-                val description: String,
-                val book_image: String)
+
+data class Book(
+    val title: String,
+    val description: String,
+    val book_image: String
+    )
 
